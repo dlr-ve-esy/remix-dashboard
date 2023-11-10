@@ -79,63 +79,73 @@ def create(data, metadata, cfg):
 
     config = {"selector" : "Technology", "grouper": "Scenario"}
 
-    scen = st.selectbox(
-        label=f"Select the {config['grouper']}",
-        options=data.index.get_level_values(config["grouper"]).unique().tolist()
-    )
+    navbar, plotarea = st.columns([0.2, 0.8])
 
-    datacol = st.selectbox(
-        label=f"Select the map information",
-        options=[metadata[key]["label"] for key in data.columns]
-    )
-    col = find_key_by_name(metadata, datacol)
+    with navbar:
+        scen = st.selectbox(
+            label=f"Select the {config['grouper']}",
+            options=data.index.get_level_values(config["grouper"]).unique().tolist()
+        )
 
-    select = st.selectbox(
-        label=f"Select {config['selector']}",
-        options=data.index.get_level_values(config["selector"]).unique().tolist(),
-    )
+        df = data.query(f"{config['grouper']} == '{scen}'")
+        df.index = df.index.droplevel(config["grouper"])
 
-    st.markdown(f"### {datacol} by {config['selector']} {select} in {metadata[col]['unit']}.")
+        datacol = st.selectbox(
+            label=f"Select the map information",
+            options=[metadata[key]["label"] for key in data.columns]
+        )
+        col = find_key_by_name(metadata, datacol)
 
-    df = data.query(f"{config['selector']} == '{select}'")[[col]].round()
-    df.index = df.index.droplevel(config["selector"])
-    df = df.query(f"{config['grouper']} == '{scen}'")
-    df.index = df.index.droplevel(config["grouper"])
+        df = df[[col]].round()
+        df = df[df.groupby(config["selector"])[col].transform(lambda x: (x != 0).any())]
 
-    nodelookup = {
-        "AT": "Austria",
-        "BE": "Belgium",
-        "CH": "Switzerland",
-        "CZ": "Czechia",
-        "DE": "Germany",
-        "DK": "Denmark",
-        "FR": "France",
-        "IT": "Italy",
-        "LU": "Luxembourg",
-        "NL": "Netherlands",
-        "PL": "Poland"
-    }
+        select = st.selectbox(
+            label=f"Select {config['selector']}",
+            options=df.index.get_level_values(config["selector"]).unique().tolist(),
+        )
 
-    map_options, map = _create_background_map()
+    with plotarea:
 
-    options = {
-        "series": [
-            {
-                "name": metadata[col]["label"],
-                "type": "map",
-                "roam": True,
-                "map": "Europe",
-                "emphasis": {"label": {"show": True}},
-                "data": [
-                    {"name": nodelookup[node], "value": df.loc[node, col]} for node in df.index
-                ],
-            }
-        ],
-        "visualMap": {
-            "min": int(df.min().iloc[0]),
-            "max": int(df.max().iloc[0])
+        st.markdown(f"### {datacol} by {config['selector']} {select} in {metadata[col]['unit']}.")
+
+        df = df.query(f"{config['selector']} == '{select}'")[[col]].round()
+        df.index = df.index.droplevel(config["selector"])
+
+        nodelookup = {
+            "AT": "Austria",
+            "BE": "Belgium",
+            "CH": "Switzerland",
+            "CZ": "Czechia",
+            "DE": "Germany",
+            "DK": "Denmark",
+            "FR": "France",
+            "IT": "Italy",
+            "LU": "Luxembourg",
+            "NL": "Netherlands",
+            "PL": "Poland"
         }
-    }
-    map_options = update_options_with_user_overrides(map_options, options)
 
-    st_echarts(options, map=map, height="600px", width="75%")
+        map_options, map = _create_background_map()
+
+        options = {
+            "series": [
+                {
+                    "name": metadata[col]["label"],
+                    "type": "map",
+                    "roam": True,
+                    "map": "Europe",
+                    "emphasis": {"label": {"show": True}},
+                    "data": [
+                        {"name": nodelookup[node], "value": df.loc[node, col]} for node in df.index
+                    ],
+                }
+            ],
+            "visualMap": {
+                "min": int(df.min().iloc[0]),
+                "max": int(df.max().iloc[0])
+            }
+        }
+        map_options = update_options_with_user_overrides(map_options, options)
+        print(map_options["visualMap"])
+
+        st_echarts(options, map=map, height="600px", width="75%")
