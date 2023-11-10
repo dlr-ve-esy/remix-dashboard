@@ -6,3 +6,5 @@ tables
 cattrs
 attrs
 sphinx
+qrcode
+streamlit_extras
