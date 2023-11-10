@@ -1,0 +1,22 @@
+{
+    "dashboard_label": "Our nice dashboard",
+    "enable_darkmode_toggle": true,
+    "enable_references": true,
+    "references_icon": "list",
+    "sidemenu_icon": "layout-text-window-reverse",
+    "data_path": null,
+    "qrcode_url": "my fancy url",
+    "qrcode_url_text": "click me",
+    "tabs": [
+        {
+            "id": "tab0",
+            "label": "Tab One",
+            "icon": "bar-chart-line",
+            "text": "Add your functions to the `'./tabs/tab_tab0.py'` file! :)",
+            "display_enabled": false
+        }
+    ],
+    "references": [
+        "doi:3412242132312"
+    ]
+}
