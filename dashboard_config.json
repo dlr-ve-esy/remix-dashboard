@@ -4,15 +4,22 @@
     "enable_references": true,
     "references_icon": "list",
     "sidemenu_icon": "layout-text-window-reverse",
-    "data_path": null,
+    "data_path": "./data/remix.hdf5",
     "qrcode_url": "my fancy url",
     "qrcode_url_text": "click me",
     "tabs": [
         {
             "id": "tab0",
-            "label": "Tab One",
+            "label": "Scenario Comparison",
             "icon": "bar-chart-line",
-            "text": "Add your functions to the `'./tabs/tab_tab0.py'` file! :)",
+            "path": "tab0.md",
+            "display_enabled": false
+        },
+        {
+            "id": "tab1",
+            "label": "Commodity balance",
+            "icon": "bar-chart-line",
+            "path": "tab1.md",
             "display_enabled": false
         }
     ],
