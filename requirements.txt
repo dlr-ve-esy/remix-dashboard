@@ -1,5 +1,8 @@
 streamlit
 pandas
 streamlit_echarts
-streamlit_options_menu
+streamlit_option_menu
 tables
+cattrs
+attrs
+sphinx
