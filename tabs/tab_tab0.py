@@ -3,7 +3,6 @@ from streamlit_echarts import st_echarts
 from dashboard.plots.barplots import barplot_grouped
 from dashboard.tools.options import update_options_with_user_overrides
 from dashboard.tools.options import update_options_with_defaults
-import pandas as pd
 
 
 def _grouped_bars(data, metadata, col):

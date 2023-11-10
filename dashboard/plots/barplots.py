@@ -45,7 +45,7 @@ def _default_barplot_options():
             # 'splitLine':{ 'show': False },
             # 'axisLine': { 'show': False },
             'axisTick': { 'show': True },
-            'axisLabel': { 'show': False }
+            'axisLabel': { 'show': True }
         }
     }
     return options
@@ -86,7 +86,7 @@ def barplot_simple(data, metadata=None):
 
     options = update_options_with_user_overrides(_default_barplot_options(), options)
     return options
-    
+
 
 def barplot_grouped(data, metadata=None):
     x_col = data.columns[0]
@@ -105,7 +105,7 @@ def barplot_grouped(data, metadata=None):
         }
         d.update(_default_barplot_series_options())
         series_list.append(d)
-    
+
     options = {
         'legend': {
             'data': groups,
@@ -118,7 +118,7 @@ def barplot_grouped(data, metadata=None):
 
     options = update_options_with_user_overrides(_default_barplot_options(), options)
     return options
-    
+
 
 def barplot_stacked(self, data, metadata=None):
     x_col = data.columns[0]
@@ -137,7 +137,7 @@ def barplot_stacked(self, data, metadata=None):
         }
         d.update(_default_barplot_series_options())
         series_list.append(d)
-    
+
     options = {
         'legend': {
             'data': stacks
@@ -147,10 +147,10 @@ def barplot_stacked(self, data, metadata=None):
         },
         'series': series_list
     }
-    
+
     options = update_options_with_user_overrides(_default_barplot_options(), options)
     return options
-    
+
 
 def barplot_grouped_stacked(data, metadata):
     x_col = data.columns[0]
@@ -172,7 +172,7 @@ def barplot_grouped_stacked(data, metadata):
         }
         d.update(_default_barplot_series_options())
         series_list.append(d)
-    
+
     options = {
         'legend': {
             'data': stacks
@@ -190,4 +190,3 @@ def barplot_grouped_stacked(data, metadata):
 
 
 
-        

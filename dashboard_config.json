@@ -21,6 +21,12 @@
             "icon": "bar-chart-line",
             "path": "tab1.md",
             "display_enabled": false
+        },
+        {
+            "id": "tab2",
+            "label": "Regionalization",
+            "icon": "bar-chart-line",
+            "display_enabled": false
         }
     ],
     "references": [
