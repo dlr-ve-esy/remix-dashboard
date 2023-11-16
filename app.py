@@ -30,7 +30,7 @@ if __name__ == "__main__":
     # load data and metadata
     data, metadata = load_data(dash_cfg.data_path)
 
-    st.set_page_config(page_title="sfc dashboard", layout="wide")
+    st.set_page_config(page_title="Dashboard for FlexMex REMix model results", layout="wide")
 
     # create default sidebar
     with st.sidebar:

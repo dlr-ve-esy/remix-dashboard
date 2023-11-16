@@ -18,8 +18,8 @@ def create(data, metadata, cfg):
 
     st.markdown(
         f"## Results grouped by scenario and filtered by country\n"
-        "You can explore the electricity generation, CO2 emissions and installed capacities in the different "
-        "FlexMex2 scenarios."
+        "You can explore the electricity generation, CO2 emissions and installed capacities in three different "
+        "FlexMex scenarios: \"3a\", \"3c\" and \"4a\"."
     )
 
     navbar, plotarea = st.columns([0.2, 0.8])
@@ -34,7 +34,7 @@ def create(data, metadata, cfg):
 
         config = {"selector" : "Node", "grouper": "Scenario"}
         select = st.selectbox(
-            label=f"Select {config['selector']}",
+            label=f"Select the model {config['selector']}",
             options=data.index.get_level_values(config["selector"]).unique().tolist(),
             key=col
         )

@@ -14,6 +14,7 @@ def create(data, metadata, cfg):
 
     st.markdown(
         f"## Electricity flows for each technology filtered by region and scenario\n"
+        "Here you can explore the electriciy supply and demand in different scenarios and different model nodes."
     )
 
     navbar, plotarea = st.columns([0.2, 0.8])

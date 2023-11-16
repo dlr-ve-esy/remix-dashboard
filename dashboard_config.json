@@ -9,6 +9,11 @@
     "qrcode_url_text": "click me",
     "tabs": [
         {
+            "id": "project_information",
+            "label": "Project information",
+            "icon": "info"
+        },
+        {
             "id": "tab0",
             "label": "Scenario Comparison",
             "icon": "bar-chart-line",
@@ -30,6 +35,8 @@
         }
     ],
     "references": [
-        "doi:3412242132312"
+        "Gils, H. C., Gardian, H., Kittel, M., Schill, W., Murmann, A., Launer, J., Gaumnitz, F., van Ouwerkerk, J, Mikurda, J., Torralba-Díaz, L. (2021). Model-related outcome differences in power system models with sector coupling - quantification and drivers. In Renewable and Sustainable Energy Reviews. Elsevier. ISSN 1364-0321.",
+        "Gils, H. C., Gardian, H., Kittel, M., Schill, W., Zerrahn, A., Murmann, A., Launer, J., Fehler, A., Gaumnitz, F., van Ouwerkerk, J., Bußar, C., Mikurda, J., Torralba-Díaz, L., Janßen, T., Krüger, C. (2021). Modeling flexibility in energy systems - comparison of power sector models based on simplified test cases. In Renewable and Sustainable Energy Reviews. Elsevier. ISSN 1364-0321.",
+        "van Ouwerkerk, J., Gils, H. C., Gardian, H., Kittel, M., Schill, W., Zerrahn, A., Murmann, A., Launer, J., Torralba-Díaz, L., Bußar, C. (2021). Comparison of power sector models by analyzing the impact of modeling features on optimal capacity expansion. In Renewable and Sustainable Energy Reviews. Elsevier. ISSN 1364-0321."
     ]
 }

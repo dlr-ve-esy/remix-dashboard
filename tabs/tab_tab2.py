@@ -79,6 +79,12 @@ def create(data, metadata, cfg):
 
     config = {"selector" : "Technology", "grouper": "Scenario"}
 
+    st.markdown(
+        "On this map you can explore different indicators in the spatial "
+        "resolution of the model. You can select the scenario, the commodity "
+        "or installed capacity and the technology."
+    )
+
     navbar, plotarea = st.columns([0.2, 0.8])
 
     with navbar:
@@ -106,7 +112,7 @@ def create(data, metadata, cfg):
 
     with plotarea:
 
-        st.markdown(f"### {datacol} by {config['selector']} {select} in {metadata[col]['unit']}.")
+        st.markdown(f"### {datacol}: {config['selector']} \"{select}\" in {metadata[col]['unit']}")
 
         df = df.query(f"{config['selector']} == '{select}'")[[col]].round()
         df.index = df.index.droplevel(config["selector"])
@@ -146,6 +152,5 @@ def create(data, metadata, cfg):
             }
         }
         map_options = update_options_with_user_overrides(map_options, options)
-        print(map_options["visualMap"])
 
         st_echarts(options, map=map, height="600px", width="75%")
