@@ -14,22 +14,21 @@ The figures are licensed under the
 [CC BY 4.0 DEED](https://creativecommons.org/licenses/by/4.0/) license.
 
 FlexMex stands for Model experiment for the temporally and spatially resolved
-investigation of future load balancing in the power system Within the MODEX i.e.
-Modelling experiments for the Energy Transition (Modellexperimente für die
+investigation of future load balancing in the power system. Within the MODEX
+i.e. Modelling experiments for the Energy Transition (Modellexperimente für die
 Energiewende in German), the FlexMex project invoked comparisons of nine energy
 system models from different research institutions. The project was funded by
 the German Federal Ministry of Economic Affairs and Climate Action (BMWK),
-formerly Federal Ministry of Economic Affairs and Energy (BMWi). All relevant
-publications of data and reports are listed below. The scope and requirements of
-FlexMex translate into a comprehensive model within the REMix framework. The
-model components (commodities, converters, etc.) and the overall structure are
-explained in the following.
+formerly Federal Ministry of Economic Affairs and Energy (BMWi). 
 
 ### Modeling Scope
 
+Find the most important details about the model in the lists and figures below.
+
 #### Spatial resolution
 
-- 11 neighboring countries (Germany, France, Switzerland, Italy, Belgium, Netherlands, Luxembourg, Czech Republic, Poland, Denmark, Austria)
+- 11 neighboring countries (Germany, France, Switzerland, Italy, Belgium,
+  Netherlands, Luxembourg, Czech Republic, Poland, Denmark, Austria)
 
 #### Temporal Scope
 
