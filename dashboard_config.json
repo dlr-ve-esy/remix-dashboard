@@ -5,7 +5,7 @@
     "references_icon": "list",
     "sidemenu_icon": "layout-text-window-reverse",
     "data_path": "./data/remix.hdf5",
-    "qrcode_url": "",
+    "qrcode_url": "https://flexmex-remix.streamlit.app",
     "qrcode_url_text": "click me",
     "tabs": [
         {
