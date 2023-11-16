@@ -48,7 +48,7 @@ def add_reference_widget(dash_cfg):
                 break
         if st.session_state["active_tab"] == itab.id:
             st.header(itab.label)
-            txt = "These are the references:\n\n"
+            txt = "Relevant literature on the FlexMex project:\n\n"
             refs = "".join(["- {}\n\n"] * len(dash_cfg.references))
             mdlit(txt + refs.format(*dash_cfg.references))
 

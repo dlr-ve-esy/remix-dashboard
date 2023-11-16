@@ -59,7 +59,7 @@ class DashboardConfiguration:
                 )
 
         if "contacts" not in [i.id for i in self.tabs]:
-            self.tabs.append(TabData("contacts", "Information", "chat-square-dots"))
+            self.tabs.append(TabData("contacts", "Contact Information", "chat-square-dots"))
 
         for itab in self.tabs:
             if itab.id in tab_hooks:
