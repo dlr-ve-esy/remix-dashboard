@@ -1,6 +1,6 @@
 {
-    "dashboard_label": "Our nice dashboard",
-    "enable_darkmode_toggle": true,
+    "dashboard_label": "REMix Dashboard for FlexMex",
+    "enable_darkmode_toggle": false,
     "enable_references": true,
     "references_icon": "list",
     "sidemenu_icon": "layout-text-window-reverse",
