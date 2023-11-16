@@ -10,12 +10,16 @@ def create_default_sidebar(dash_cfg: DashboardConfiguration):
         logo = Image.open("data/column-chart-line-icon-white.png")
         logo = logo.resize((150, 100))
 
-        st.image(logo, output_format="png")
+        left_co, cent_co,last_co = st.columns([0.1, 0.8, 0.1])
+        with cent_co:
+            st.image(logo, output_format="png")
     elif st.session_state["style"] == "light":
         logo = Image.open("data/column-chart-line-icon-black.png")
         logo = logo.resize((150, 100))
 
-        st.image(logo, output_format="png")
+        left_co, cent_co,last_co = st.columns([0.1, 0.8, 0.1])
+        with cent_co:
+            st.image(logo, output_format="png")
 
     selected = option_menu(
         dash_cfg.dashboard_label,
