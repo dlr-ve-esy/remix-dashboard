@@ -7,7 +7,11 @@ API elements for plots generated with the
 ## Example model results
 
 The results shown in this dashboard are taken from REMix model developed in the
-**FlexMex** project.
+**FlexMex** project. The figures and description is taken from the respective
+publications listed in the references tab, especially
+[this article](https://doi.org/10.1016/j.rser.2022.112177).
+The figures are licensed under the
+[CC BY 4.0 DEED](https://creativecommons.org/licenses/by/4.0/) license.
 
 FlexMex stands for Model experiment for the temporally and spatially resolved
 investigation of future load balancing in the power system Within the MODEX i.e.
@@ -21,6 +25,15 @@ FlexMex translate into a comprehensive model within the REMix framework. The
 model components (commodities, converters, etc.) and the overall structure are
 explained in the following.
 
-### Technological scope
+### Modeling Scope
 
-The figure below illustrates the technological scope of the model:
+#### Spatial resolution
+
+- 11 neighboring countries (Germany, France, Switzerland, Italy, Belgium, Netherlands, Luxembourg, Czech Republic, Poland, Denmark, Austria)
+
+#### Temporal Scope
+
+- Temporal Resolution: 1 hour
+- Model Years: 2050
+
+#### Technological scope and scenario overview

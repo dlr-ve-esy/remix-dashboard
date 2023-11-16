@@ -8,5 +8,7 @@ def create(data, metadata, cfg):
         md = f.read()
 
     st.markdown(md)
-    systemoverview = Image.open("data/REMix_flexmex_example.png")
-    st.image(systemoverview, output_format="png")
+    systemoverview = Image.open("data/flexmex-scenarios.jpg")
+    st.image(systemoverview, output_format="jpg")
+    systemoverview = Image.open("data/flexmex-model-scope.jpg")
+    st.image(systemoverview, output_format="jpg")
